@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/edp/static/js/main.8f6a4b28.js",
+    "static/js/787.bca56bec.chunk.js": "/edp/static/js/787.bca56bec.chunk.js",
+    "static/media/logo.jpeg": "/edp/static/media/logo.c7893822468dce7416fc.jpeg",
+    "index.html": "/edp/index.html",
+    "main.8f6a4b28.js.map": "/edp/static/js/main.8f6a4b28.js.map",
+    "787.bca56bec.chunk.js.map": "/edp/static/js/787.bca56bec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8f6a4b28.js"
+  ]
+}
