@@ -8,15 +8,129 @@ import {
   VStack,
   Stack,
   Grid,
+  Flex,
+  Card,
+  Image,
+  Center,
+  Heading,
+  CardFooter,
   theme,
 } from '@chakra-ui/react';
-import { BsInstagram, BsFacebook, BsTelegram } from 'react-icons/bs';
+import { BsInstagram, BsFacebook, BsTelegram, BsLink, BsWhatsapp } from 'react-icons/bs';
+import { SiLinktree } from "react-icons/si";
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { LangSwitcher } from './LangSwitcher';
 import { Logo } from './Logo';
 
 function App() {
   const [lang, setLang] = React.useState(true)
+  const ecstaticProjects = [
+    {
+      name: 'Ecstatic Dance Ericeira',
+      image: 'https://ecstaticdanceericeira.pt/logo.webp',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'telegram', url: 'https://t.me/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Ecstatic Dance Lisboa',
+      image: 'https://ecstaticdance.org/wp-content/uploads/2023/01/ED-Lisboa-avatar.jpg',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Ecstatic Dance Sintra',
+      image: 'https://ugc.production.linktr.ee/EWd353BRQZmW67Wfw36c_VngUxzmy770mj80T?io=true&size=avatar-v3_0',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Ecstatic Dance Porto',
+      image: 'https://ecstaticdance.org/wp-content/uploads/2023/09/3928C739-F042-4EFC-BD9A-C2EDD37B83B9.jpeg',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Coração de Cacau',
+      image: 'https://ugc.production.linktr.ee/A5IWFP6SI6vCJ64R5J1K_YWw46D4KSs6cQA7U?io=true&size=avatar-v3_0',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Ecstatic Dance Ericeira',
+      image: 'https://ecstaticdanceericeira.pt/logo.webp',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'telegram', url: 'https://t.me/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Ecstatic Dance Lisboa',
+      image: 'https://ecstaticdance.org/wp-content/uploads/2023/01/ED-Lisboa-avatar.jpg',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Ecstatic Dance Sintra',
+      image: 'https://ugc.production.linktr.ee/EWd353BRQZmW67Wfw36c_VngUxzmy770mj80T?io=true&size=avatar-v3_0',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Ecstatic Dance Porto',
+      image: 'https://ecstaticdance.org/wp-content/uploads/2023/09/3928C739-F042-4EFC-BD9A-C2EDD37B83B9.jpeg',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    },
+    {
+      name: 'Coração de Cacau',
+      image: 'https://ugc.production.linktr.ee/A5IWFP6SI6vCJ64R5J1K_YWw46D4KSs6cQA7U?io=true&size=avatar-v3_0',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+      ]
+    }
+  ]
+
+  const renderIcon = (link) => {
+    if (link.name === 'instagram') {
+      return <BsInstagram />
+    } else if (link.name === 'telegram') {
+      return <BsTelegram />
+    } else if (link.name === 'whatsapp') {
+      return <BsWhatsapp />
+    } else if (link.name === 'facebook') {
+      return <BsFacebook />
+    } else if (link.name === 'linktree') {
+      return <SiLinktree />
+    }
+    else {
+      return <BsLink />
+    }
+  }
 
   return (
     <ChakraProvider theme={theme}>
@@ -74,6 +188,28 @@ function App() {
           </VStack>
         </Grid>
       </Box>
+
+      <Flex flexWrap="wrap" p={2} gap={8} pb='5em' bgGradient='linear(to-b, white, gray.300)'>
+        {ecstaticProjects.map(project => {
+          return (<Card maxW='xs' margin="auto">
+            <Image
+              src={project.image}
+              borderRadius="8px 8px 0 0"
+            />
+            {/* <Heading size='md' textAlign="center" my='1em'>{project.name}</Heading> */}
+            <CardFooter justifyContent='space-around' px={1}>
+              {
+                project.links.map(link => {
+                  return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
+                    <small>{link.name}</small>
+                  </Button>)
+                })
+              }
+            </CardFooter>
+          </Card>)
+        }).sort(() => .5 - Math.random())}
+      </Flex>
+
     </ChakraProvider>
   );
 }
