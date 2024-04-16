@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/edp/static/js/main.ada205d1.js",
+    "main.js": "/edp/static/js/main.eda7572a.js",
     "static/js/787.bca56bec.chunk.js": "/edp/static/js/787.bca56bec.chunk.js",
     "static/media/logo.jpeg": "/edp/static/media/logo.c7893822468dce7416fc.jpeg",
     "index.html": "/edp/index.html",
-    "main.ada205d1.js.map": "/edp/static/js/main.ada205d1.js.map",
+    "main.eda7572a.js.map": "/edp/static/js/main.eda7572a.js.map",
     "787.bca56bec.chunk.js.map": "/edp/static/js/787.bca56bec.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ada205d1.js"
+    "static/js/main.eda7572a.js"
   ]
 }
