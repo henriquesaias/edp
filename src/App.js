@@ -19,6 +19,7 @@ import {
   Heading,
   CardFooter,
   theme,
+  useColorMode
 } from '@chakra-ui/react';
 import { BsInstagram, BsFacebook, BsTelegram, BsLink, BsWhatsapp } from 'react-icons/bs';
 import { SiLinktree } from "react-icons/si";
@@ -28,6 +29,7 @@ import { Logo } from './Logo';
 
 function App() {
   const [lang, setLang] = React.useState(true)
+  const { colorMode } = useColorMode();
   const ecstaticProjects = [
     {
       name: 'Ecstatic Dance Ericeira',
@@ -193,9 +195,15 @@ function App() {
         </Grid>
       </Box>
 
-      <Heading as="h2" textAlign="center" mb={12}>{lang ? 'De Norte a Sul' : 'From North to South'}</Heading>
+      <Heading as="h2" textAlign="center" mb={12}>
+        {lang ? 'Encontros de Norte a Sul' : 'Gatherings from North to South'}
+      </Heading>
 
-      <Box bgGradient='linear(to-b, white, gray.300)'>
+      <Box bgGradient={
+        colorMode === "light"
+          ? "linear(to-b, white, gray.300)"
+          : "linear(to-b, gray.800, gray.600)"
+      }>
         <Accordion allowMultiple>
           <AccordionItem>
             <h2>
