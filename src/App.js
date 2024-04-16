@@ -11,7 +11,11 @@ import {
   Flex,
   Card,
   Image,
-  Center,
+  Accordion,
+  AccordionItem,
+  AccordionPanel,
+  AccordionButton,
+  AccordionIcon,
   Heading,
   CardFooter,
   theme,
@@ -189,26 +193,139 @@ function App() {
         </Grid>
       </Box>
 
-      <Flex flexWrap="wrap" p={2} gap={8} pb='5em' bgGradient='linear(to-b, white, gray.300)'>
-        {ecstaticProjects.map(project => {
-          return (<Card maxW='xs' margin="auto">
-            <Image
-              src={project.image}
-              borderRadius="8px 8px 0 0"
-            />
-            {/* <Heading size='md' textAlign="center" my='1em'>{project.name}</Heading> */}
-            <CardFooter justifyContent='space-around' px={1}>
-              {
-                project.links.map(link => {
-                  return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
-                    <small>{link.name}</small>
-                  </Button>)
-                })
-              }
-            </CardFooter>
-          </Card>)
-        }).sort(() => .5 - Math.random())}
-      </Flex>
+      <Heading as="h2" textAlign="center" mb={12}>{lang ? 'De Norte a Sul' : 'From North to South'}</Heading>
+
+      <Box bgGradient='linear(to-b, white, gray.300)'>
+        <Accordion allowMultiple>
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as='span' flex='1' textAlign='left'>
+                  <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Norte' : 'North'}</Heading>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
+                {ecstaticProjects.map(project => {
+                  return (<Card maxW='xs' margin="auto">
+                    <Image
+                      src={project.image}
+                      borderRadius="8px 8px 0 0"
+                    />
+                    <CardFooter justifyContent='space-around' px={1}>
+                      {
+                        project.links.map(link => {
+                          return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
+                            <small>{link.name}</small>
+                          </Button>)
+                        })
+                      }
+                    </CardFooter>
+                  </Card>)
+                }).sort(() => .5 - Math.random())}
+              </Flex>
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as='span' flex='1' textAlign='left'>
+                  <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Centro' : 'Center'}</Heading>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
+                {ecstaticProjects.map(project => {
+                  return (<Card maxW='xs' margin="auto">
+                    <Image
+                      src={project.image}
+                      borderRadius="8px 8px 0 0"
+                    />
+                    <CardFooter justifyContent='space-around' px={1}>
+                      {
+                        project.links.map(link => {
+                          return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
+                            <small>{link.name}</small>
+                          </Button>)
+                        })
+                      }
+                    </CardFooter>
+                  </Card>)
+                }).sort(() => .5 - Math.random())}
+              </Flex>
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as='span' flex='1' textAlign='left'>
+                  <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Área da Grande Lisboa' : 'Lisbon area'}</Heading>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
+                {ecstaticProjects.map(project => {
+                  return (<Card maxW='xs' margin="auto">
+                    <Image
+                      src={project.image}
+                      borderRadius="8px 8px 0 0"
+                    />
+                    <CardFooter justifyContent='space-around' px={1}>
+                      {
+                        project.links.map(link => {
+                          return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
+                            <small>{link.name}</small>
+                          </Button>)
+                        })
+                      }
+                    </CardFooter>
+                  </Card>)
+                }).sort(() => .5 - Math.random())}
+              </Flex>
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as='span' flex='1' textAlign='left'>
+                  <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Sul' : 'South'}</Heading>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
+                {ecstaticProjects.map(project => {
+                  return (<Card maxW='xs' margin="auto">
+                    <Image
+                      src={project.image}
+                      borderRadius="8px 8px 0 0"
+                    />
+                    <CardFooter justifyContent='space-around' px={1}>
+                      {
+                        project.links.map(link => {
+                          return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
+                            <small>{link.name}</small>
+                          </Button>)
+                        })
+                      }
+                    </CardFooter>
+                  </Card>)
+                }).sort(() => .5 - Math.random())}
+              </Flex>
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      </Box>
 
     </ChakraProvider>
   );
