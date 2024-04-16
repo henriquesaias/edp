@@ -91,14 +91,15 @@ function App() {
         {lang ? 'Encontros de Norte a Sul' : 'Gatherings from North to South'}
       </Heading>
 
-      <MyComponent lang={lang} />
+      <MyComponent language={lang} />
 
     </ChakraProvider>
   );
 }
 
-function MyComponent(lang) {
+function MyComponent(language) {
   const { colorMode } = useColorMode();
+  console.log(language.language)
 
   const renderIcon = (link) => {
     if (link.name === 'instagram') {
@@ -219,7 +220,7 @@ function MyComponent(lang) {
           <h2>
             <AccordionButton>
               <Box as='span' flex='1' textAlign='left'>
-                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Norte' : 'North'}</Heading>
+                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{language.language ? 'Norte' : 'North'}</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -251,7 +252,7 @@ function MyComponent(lang) {
           <h2>
             <AccordionButton>
               <Box as='span' flex='1' textAlign='left'>
-                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Centro' : 'Center'}</Heading>
+                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{language.language ? 'Centro' : 'Center'}</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -283,7 +284,7 @@ function MyComponent(lang) {
           <h2>
             <AccordionButton>
               <Box as='span' flex='1' textAlign='left'>
-                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Área da Grande Lisboa' : 'Lisbon area'}</Heading>
+                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{language.language ? 'Área da Grande Lisboa' : 'Lisbon area'}</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -315,7 +316,7 @@ function MyComponent(lang) {
           <h2>
             <AccordionButton>
               <Box as='span' flex='1' textAlign='left'>
-                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{lang ? 'Sul' : 'South'}</Heading>
+                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{language.language ? 'Sul' : 'South'}</Heading>
               </Box>
               <AccordionIcon />
             </AccordionButton>
