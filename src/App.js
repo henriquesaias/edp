@@ -21,7 +21,7 @@ import {
   theme,
   useColorMode
 } from '@chakra-ui/react';
-import { BsInstagram, BsFacebook, BsTelegram, BsLink, BsWhatsapp } from 'react-icons/bs';
+import { BsInstagram, BsFacebook, BsTelegram, BsLink, BsWhatsapp, BsMailbox } from 'react-icons/bs';
 import { SiLinktree } from "react-icons/si";
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { LangSwitcher } from './LangSwitcher';
@@ -99,7 +99,6 @@ function App() {
 
 function MyComponent(language) {
   const { colorMode } = useColorMode();
-  console.log(language.language)
 
   const renderIcon = (link) => {
     if (link.name === 'instagram') {
@@ -112,57 +111,57 @@ function MyComponent(language) {
       return <BsFacebook />
     } else if (link.name === 'linktree') {
       return <SiLinktree />
+    } else if (link.name === 'email') {
+      return <BsMailbox />
     }
     else {
       return <BsLink />
     }
   }
 
-  const ecstaticProjects = [
-    {
-      name: 'Ecstatic Dance Ericeira',
-      image: 'https://ecstaticdanceericeira.pt/logo.webp',
-      links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'telegram', url: 'https://t.me/ecstaticdanceericeira' }
-      ]
-    },
-    {
-      name: 'Ecstatic Dance Lisboa',
-      image: 'https://ecstaticdance.org/wp-content/uploads/2023/01/ED-Lisboa-avatar.jpg',
-      links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' }
-      ]
-    },
-    {
-      name: 'Ecstatic Dance Sintra',
-      image: 'https://ugc.production.linktr.ee/EWd353BRQZmW67Wfw36c_VngUxzmy770mj80T?io=true&size=avatar-v3_0',
-      links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
-      ]
-    },
+  const ecstaticProjectsNorth = [
     {
       name: 'Ecstatic Dance Porto',
-      image: 'https://ecstaticdance.org/wp-content/uploads/2023/09/3928C739-F042-4EFC-BD9A-C2EDD37B83B9.jpeg',
+      image: 'https://i.postimg.cc/Zqf5hGvy/porto.jpg',
       links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+        { name: 'email', url: 'ecstaticdanceporto@gmail.com' },
+        { name: 'telegram', url: 'https://t.me/ecstaticdanceporto' },
+        { name: 'whatsapp', url: 'https://chat.whatsapp.com/FHSe1sVhcn33Cuj4eyoS4X' }
       ]
     },
     {
-      name: 'Coração de Cacau',
-      image: 'https://ugc.production.linktr.ee/A5IWFP6SI6vCJ64R5J1K_YWw46D4KSs6cQA7U?io=true&size=avatar-v3_0',
+      name: 'Ecstatic Dance Gaya',
+      image: 'https://i.postimg.cc/DZHfS1gv/gaya.png',
       links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+        { name: 'site', url: 'https://ecstaticdancegaya.pt/' },
+        { name: 'instagram', url: 'https://www.instagram.com/ecstaticdancegaya/' },
+        {name: 'linktree', url: 'http://linktr.ee/ecstaticdancegaya'}
       ]
-    },
+    }
+  ]
+
+  // const ecstaticProjectsLisbon = [
+  //   {
+  //     name: 'Ecstatic Dance Ericeira',
+  //     image: 'https://i.postimg.cc/Zqf5hGvy/porto.jpg',
+  //     links: [
+  //       { name: 'email', url: 'ecstaticdanceporto@gmail.com' },
+  //       { name: 'telegram', url: 'https://t.me/ecstaticdanceporto' },
+  //       { name: 'whatsapp', url: 'https://chat.whatsapp.com/FHSe1sVhcn33Cuj4eyoS4X' }
+  //     ]
+  //   },
+  //   {
+  //     name: 'Ecstatic Dance Gaya',
+  //     image: 'https://i.postimg.cc/DZHfS1gv/gaya.png',
+  //     links: [
+  //       { name: 'site', url: 'https://ecstaticdancegaya.pt/' },
+  //       { name: 'instagram', url: 'https://www.instagram.com/ecstaticdancegaya/' },
+  //       {name: 'linktree', url: 'http://linktr.ee/ecstaticdancegaya'}
+  //     ]
+  //   }
+  // ]
+
+  const ecstaticProjects = [
     {
       name: 'Ecstatic Dance Ericeira',
       image: 'https://ecstaticdanceericeira.pt/logo.webp',
@@ -227,7 +226,7 @@ function MyComponent(language) {
           </h2>
           <AccordionPanel pb={4}>
             <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
-              {ecstaticProjects.map(project => {
+              {ecstaticProjectsNorth.map(project => {
                 return (<Card maxW='xs' margin="auto">
                   <Image
                     src={project.image}

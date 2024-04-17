@@ -8,10 +8,12 @@ export const LangSwitcher = props => {
       fontSize="lg"
       aria-label={props.lang ? 'Ler em português' : 'Switch to english'}
       variant="ghost"
+      position='fixed'
+      right="2.5em"
       onClick={() => props.setLang(!props.lang)}
       {...props}
     >
-      {!props.lang ? 'PT' : 'EN'}
+      {!props.lang ? 'Ler em português' : 'English version'}
     </Button>
   );
 };
