@@ -10,6 +10,7 @@ export const LangSwitcher = props => {
       variant="ghost"
       position='fixed'
       right="2.5em"
+      zIndex={2}
       onClick={() => props.setLang(!props.lang)}
       {...props}
     >

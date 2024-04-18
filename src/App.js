@@ -33,7 +33,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
+        <Grid minH="100svh" p={3}>
           <Stack justifySelf="flex-end" direction='row'>
             <LangSwitcher lang={lang} setLang={setLang} />
             <ColorModeSwitcher />
@@ -87,7 +87,7 @@ function App() {
         </Grid>
       </Box>
 
-      <Heading as="h2" textAlign="center" mb={12}>
+      <Heading as="h2" textAlign="center" mb={16}>
         {lang ? 'Encontros de Norte a Sul' : 'Gatherings from North to South'}
       </Heading>
 
@@ -140,26 +140,24 @@ function MyComponent(language) {
     }
   ]
 
-  // const ecstaticProjectsLisbon = [
-  //   {
-  //     name: 'Ecstatic Dance Ericeira',
-  //     image: 'https://i.postimg.cc/Zqf5hGvy/porto.jpg',
-  //     links: [
-  //       { name: 'email', url: 'ecstaticdanceporto@gmail.com' },
-  //       { name: 'telegram', url: 'https://t.me/ecstaticdanceporto' },
-  //       { name: 'whatsapp', url: 'https://chat.whatsapp.com/FHSe1sVhcn33Cuj4eyoS4X' }
-  //     ]
-  //   },
-  //   {
-  //     name: 'Ecstatic Dance Gaya',
-  //     image: 'https://i.postimg.cc/DZHfS1gv/gaya.png',
-  //     links: [
-  //       { name: 'site', url: 'https://ecstaticdancegaya.pt/' },
-  //       { name: 'instagram', url: 'https://www.instagram.com/ecstaticdancegaya/' },
-  //       {name: 'linktree', url: 'http://linktr.ee/ecstaticdancegaya'}
-  //     ]
-  //   }
-  // ]
+  const ecstaticProjectsLisbon = [
+    {
+      name: 'Ecstatic Dance Ericeira',
+      image: 'https://i.postimg.cc/cL4PLzdY/1.png',
+      links: [
+        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
+        { name: 'telegram', url: 'https://t.me/ecstaticdanceericeira' },
+      ]
+    },
+    {
+      name: 'Ecstatic Dance and Voice',
+      image: 'https://i.postimg.cc/MZVCPRsc/LOGO-EDV.jpg',
+      links: [
+        {name: 'linktree', url: 'https://linktr.ee/ecstaticdanceandvoiceportugal'}
+      ]
+    }
+  ]
 
   const ecstaticProjects = [
     {
@@ -212,7 +210,7 @@ function MyComponent(language) {
     <Box bgGradient={
       colorMode === "light"
         ? "linear(to-b, white, gray.300)"
-        : "linear(to-b, gray.800, gray.600)"
+        : "linear(to-b, gray.800, gray.700)"
     }>
       <Accordion allowMultiple>
         <AccordionItem>
@@ -290,7 +288,7 @@ function MyComponent(language) {
           </h2>
           <AccordionPanel pb={4}>
             <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
-              {ecstaticProjects.map(project => {
+              {ecstaticProjectsLisbon.map(project => {
                 return (<Card maxW='xs' margin="auto">
                   <Image
                     src={project.image}
