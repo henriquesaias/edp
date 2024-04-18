@@ -135,10 +135,12 @@ function MyComponent(language) {
       links: [
         { name: 'site', url: 'https://ecstaticdancegaya.pt/' },
         { name: 'instagram', url: 'https://www.instagram.com/ecstaticdancegaya/' },
-        {name: 'linktree', url: 'http://linktr.ee/ecstaticdancegaya'}
+        { name: 'linktree', url: 'http://linktr.ee/ecstaticdancegaya' }
       ]
     }
   ]
+
+  const ecstaticProjectsCenter = []
 
   const ecstaticProjectsLisbon = [
     {
@@ -154,54 +156,19 @@ function MyComponent(language) {
       name: 'Ecstatic Dance and Voice',
       image: 'https://i.postimg.cc/MZVCPRsc/LOGO-EDV.jpg',
       links: [
-        {name: 'linktree', url: 'https://linktr.ee/ecstaticdanceandvoiceportugal'}
+        { name: 'linktree', url: 'https://linktr.ee/ecstaticdanceandvoiceportugal' }
       ]
     }
   ]
 
-  const ecstaticProjects = [
+  const ecstaticProjectsSouth = [
     {
-      name: 'Ecstatic Dance Ericeira',
-      image: 'https://ecstaticdanceericeira.pt/logo.webp',
+      name: 'Ecstatic Dance Algarve',
+      image: 'https://i.postimg.cc/L6FdtcWf/algarve.jpg',
       links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'telegram', url: 'https://t.me/ecstaticdanceericeira' }
-      ]
-    },
-    {
-      name: 'Ecstatic Dance Lisboa',
-      image: 'https://ecstaticdance.org/wp-content/uploads/2023/01/ED-Lisboa-avatar.jpg',
-      links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' }
-      ]
-    },
-    {
-      name: 'Ecstatic Dance Sintra',
-      image: 'https://ugc.production.linktr.ee/EWd353BRQZmW67Wfw36c_VngUxzmy770mj80T?io=true&size=avatar-v3_0',
-      links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
-      ]
-    },
-    {
-      name: 'Ecstatic Dance Porto',
-      image: 'https://ecstaticdance.org/wp-content/uploads/2023/09/3928C739-F042-4EFC-BD9A-C2EDD37B83B9.jpeg',
-      links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
-      ]
-    },
-    {
-      name: 'Coração de Cacau',
-      image: 'https://ugc.production.linktr.ee/A5IWFP6SI6vCJ64R5J1K_YWw46D4KSs6cQA7U?io=true&size=avatar-v3_0',
-      links: [
-        { name: 'site', url: 'https://ecstaticdanceericeira.pt' },
-        { name: 'instagram', url: 'https://instagram.com/ecstaticdanceericeira' },
-        { name: 'linktree', url: 'https://instagram.com/ecstaticdanceericeira' }
+        { name: 'site', url: 'http://www.ecstaticsoulgathering.com/' },
+        { name: 'instagram', url: 'https://www.instagram.com/ecstaticdancealgarve' },
+        { name: 'instagram', url: 'https://instagram.com/ecstaticsoulgathering' },
       ]
     }
   ]
@@ -245,37 +212,41 @@ function MyComponent(language) {
           </AccordionPanel>
         </AccordionItem>
 
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box as='span' flex='1' textAlign='left'>
-                <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{language.language ? 'Centro' : 'Center'}</Heading>
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
-              {ecstaticProjects.map(project => {
-                return (<Card maxW='xs' margin="auto">
-                  <Image
-                    src={project.image}
-                    borderRadius="8px 8px 0 0"
-                  />
-                  <CardFooter justifyContent='space-around' px={1}>
-                    {
-                      project.links.map(link => {
-                        return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
-                          <small>{link.name}</small>
-                        </Button>)
-                      })
-                    }
-                  </CardFooter>
-                </Card>)
-              }).sort(() => .5 - Math.random())}
-            </Flex>
-          </AccordionPanel>
-        </AccordionItem>
+
+        {ecstaticProjectsCenter.length
+          ? <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as='span' flex='1' textAlign='left'>
+                  <Heading as="h3" fontSize="xl" textAlign="center" mb={12}>{language.language ? 'Centro' : 'Center'}</Heading>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
+                {ecstaticProjectsCenter.map(project => {
+                  return (<Card maxW='xs' margin="auto">
+                    <Image
+                      src={project.image}
+                      borderRadius="8px 8px 0 0"
+                    />
+                    <CardFooter justifyContent='space-around' px={1}>
+                      {
+                        project.links.map(link => {
+                          return (<Button leftIcon={renderIcon(link)} colorScheme='gray' variant='ghost' onClick={() => { window.open(link.url, "_blank") }}>
+                            <small>{link.name}</small>
+                          </Button>)
+                        })
+                      }
+                    </CardFooter>
+                  </Card>)
+                }).sort(() => .5 - Math.random())}
+              </Flex>
+            </AccordionPanel>
+          </AccordionItem>
+          : ''}
+
 
         <AccordionItem>
           <h2>
@@ -320,7 +291,7 @@ function MyComponent(language) {
           </h2>
           <AccordionPanel pb={4}>
             <Flex flexWrap="wrap" p={2} gap={8} pb='5em'>
-              {ecstaticProjects.map(project => {
+              {ecstaticProjectsSouth.map(project => {
                 return (<Card maxW='xs' margin="auto">
                   <Image
                     src={project.image}
