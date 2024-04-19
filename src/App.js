@@ -158,7 +158,16 @@ function MyComponent(language) {
       links: [
         { name: 'linktree', url: 'https://linktr.ee/ecstaticdanceandvoiceportugal' }
       ]
-    }
+    },
+    {
+      name: 'Ecstatic Dance Sintra',
+      image: 'https://i.postimg.cc/sX6HP0hM/sintra.jpg',
+      links: [
+        { name: 'instagram', url: 'http://www.instagram.com/ecstaticdancesintra' },
+        { name: 'facebook', url: 'http://www.facebook.com/ecstaticdancesintra' }
+      ]
+    },
+    
   ]
 
   const ecstaticProjectsSouth = [
