@@ -140,7 +140,16 @@ function MyComponent(language) {
     }
   ]
 
-  const ecstaticProjectsCenter = []
+  const ecstaticProjectsCenter = [
+    {
+      name: 'Ecstatic Dance Coimbra',
+      image: 'https://i.postimg.cc/SKsjf5H1/ED-Coimbra-Logo.png',
+      links: [
+        { name: 'instagram', url: 'https://instagram.com/ecstaticdancecoimbra' },
+        { name: 'facebook', url: 'https://facebook.com/ecstaticdancecoimbra' },
+      ]
+    }
+  ]
 
   const ecstaticProjectsLisbon = [
     {
