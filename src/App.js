@@ -176,6 +176,15 @@ function MyComponent(language) {
         { name: 'facebook', url: 'http://www.facebook.com/ecstaticdancesintra' }
       ]
     },
+    {
+      name: 'Ecstatic Dance Lisboa',
+      image: 'https://i.postimg.cc/44HtJMBZ/lisboa.jpg',
+      links: [
+        { name: 'instagram', url: 'https://www.instagram.com/ecstaticdancelisboa' },
+        { name: 'facebook', url: 'https://www.facebook.com/ecstaticdancelisboa' },
+        { name: 'linktree', url: 'https://linktr.ee/ecstaticdancelisboa' }
+      ]
+    },
     
   ]
 
