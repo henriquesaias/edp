@@ -1,20 +1,22 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
 
-export const LangSwitcher = props => {
+export const LangSwitcher = ({lang, setLang}) => {
+  const handleChangeLang = () => {
+    localStorage.setItem("lang", !lang)
+    setLang(!lang)
+  }
+
   return (
     <Button
       size="md"
-      fontSize="lg"
-      aria-label={props.lang ? 'Ler em português' : 'Switch to english'}
-      variant="ghost"
+      aria-label={lang ? 'Ler em português' : 'Browse in english'}
       position='fixed'
-      right="2.5em"
+      left="1em"
       zIndex={2}
-      onClick={() => props.setLang(!props.lang)}
-      {...props}
+      onClick={handleChangeLang}
     >
-      {!props.lang ? 'Ler em português' : 'English version'}
+      {!lang ? 'Ler em português' : 'English version'}
     </Button>
   );
 };
